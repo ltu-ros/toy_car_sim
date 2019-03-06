@@ -6,7 +6,7 @@ Workspace for simulation a toy Ackermann vehicle
 
 ## Setup
 
-### Clone this repo
+### 1. Clone this repo
 
 Note that this repo it a workspace. Clone it into your home directory.
 
@@ -15,7 +15,7 @@ $ cd
 $ git clone <this repo>
 ```
 
-### `ros_control`
+### 2. `ros_control`
 
 Install `ros-control` packages:
 
@@ -23,14 +23,14 @@ Install `ros-control` packages:
 sudo apt-get install ros-kinetic-ros-control ros-kinetic-ros-controllers
 ```
 
-### Build
+### 3. Build
 
 ```
 $ cd ~/toy_car_sim
 $ catkin_make
 ```
 
-### Floor Model
+### 4. Floor Model
 
 Go into the models directory and run the following script:
 
