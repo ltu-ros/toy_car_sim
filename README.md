@@ -2,7 +2,7 @@
 
 ![](images/screenshot.png)
 
-Workspace for simulation a toy Ackermann vehicle
+Simulation a toy Ackermann vehicle
 
 ## Setup
 
