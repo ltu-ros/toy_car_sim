@@ -117,6 +117,7 @@ limitations under the License.
 
   <!-- Camera -->
   <xacro:property name="camera_link" value="0.05" /> <!-- Size of square 'camera' box -->
+  <xacro:property name="lidar_size" value="0.05" /> <!-- Size of square 'camera' box -->
 
 
   <material name="battery_mat">
@@ -399,7 +400,83 @@ limitations under the License.
     <child link="chassis"/>
   </joint>
 
+  <!-- ##### -->
+  <!-- Lidar -->
+  <!-- ##### -->
   
+  <!-- Lidar Joint -->
+  <joint name="lidar_joint" type="fixed">
+    <axis xyz="0 1 0" />
+    <origin xyz="${lidar_size + 0.4} 0 ${chassis_height + 0.5}" rpy="0 1.21 0" />
+    <parent link="chassis" />
+    <child link="lidar_link" />
+  </joint>
+
+  <!-- Lidar Link -->
+  <link name="lidar_link">
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+    <box size="${lidar_size} ${lidar_size} ${lidar_size}"/>
+      </geometry>
+    </collision>
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+    <box size="${lidar_size} ${lidar_size} ${lidar_size}"/>
+      </geometry>
+      <material name="red"/>
+    </visual>
+
+    <inertial>
+      <mass value="1e-5" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+    </inertial>
+  </link>
+
+  <gazebo reference="hokuyo_link">
+    <sensor type="ray" name="laser_sensor">
+      <pose>0 0 0 0 0 0</pose>
+      <visualize>false</visualize>
+      <update_rate>30</update_rate>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>180</samples>
+            <resolution>1</resolution>
+            <min_angle>-1.570796</min_angle>
+            <max_angle>1.570796</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.10</min>
+          <max>30.0</max>
+          <resolution>0.01</resolution>
+        </range>
+        <noise>
+          <type>gaussian</type>
+          <!-- Noise parameters based on published spec for Hokuyo laser
+               achieving "+-30mm" accuracy at range < 10m.  A mean of 0.0m and
+               stddev of 0.01m will put 99.7% of samples within 0.03m of the true
+               reading. -->
+          <mean>0.0</mean>
+          <stddev>0.01</stddev>
+        </noise>
+      </ray>
+      <plugin name="gazebo_ros_laser_controller" filename="libgazebo_ros_laser.so">
+        <topicName>/lidar2d/scan</topicName>
+        <frameName>lidar_link</frameName>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+
+  <!-- ###### -->
+  <!-- Camera -->
+  <!-- ###### -->
+
   <!-- Camera Joint -->
   <joint name="camera_joint" type="fixed">
     <axis xyz="0 1 0" />
@@ -408,7 +485,7 @@ limitations under the License.
     <child link="camera_link" />
   </joint>
 
-  <!-- Camera -->
+  <!-- Camera Link -->
   <link name="camera_link">
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -432,7 +509,7 @@ limitations under the License.
     </inertial>
   </link>
 
-  <!-- camera -->
+  <!-- Camera -->
   <gazebo reference="camera_link">
     <sensor type="camera" name="camera1">
       <update_rate>30.0</update_rate>
