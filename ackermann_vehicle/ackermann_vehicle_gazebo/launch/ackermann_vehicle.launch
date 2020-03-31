@@ -53,6 +53,10 @@ limitations under the License.
   </include>
 
   <group ns="$(arg namespace)">
+    <!-- Load the robot description -->
+    <param name="robot_description" command="$(find xacro)/xacro '$(find ackermann_vehicle_description)/urdf/em_3905.urdf.xacro'" />
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
+
     <!-- Create the world. -->
     <include file="$(find gazebo_ros)/launch/empty_world.launch">
       <arg name="world_name" value="$(arg world_name)"/>
@@ -80,4 +84,7 @@ limitations under the License.
 
 
     <node pkg="twist_to_ackermann" name="twist_to_ackermann_node" type="twist_to_ackermann_node" />
+
+        <!-- Rviz -->
+        <node type="rviz" name="rviz" pkg="rviz" args="-d $(find ackermann_vehicle_gazebo)/rviz/config.rviz" />
 </launch>
