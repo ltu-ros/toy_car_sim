@@ -4,9 +4,10 @@ Panels:
     Name: Displays
     Property Tree Widget:
       Expanded:
-        - /LaserScan1
+        - /Grid1/Line Style1
+        - /Marker1/Status1
       Splitter Ratio: 0.5
-    Tree Height: 393
+    Tree Height: 421
   - Class: rviz/Selection
     Name: Selection
   - Class: rviz/Tool Properties
@@ -15,7 +16,7 @@ Panels:
       - /2D Nav Goal1
       - /Publish Point1
     Name: Tool Properties
-    Splitter Ratio: 0.588679016
+    Splitter Ratio: 0.5886790156364441
   - Class: rviz/Views
     Expanded:
       - /Current View1
@@ -26,6 +27,10 @@ Panels:
     Name: Time
     SyncMode: 0
     SyncSource: Image
+Preferences:
+  PromptSaveOnExit: true
+Toolbars:
+  toolButtonStyle: 2
 Visualization Manager:
   Class: ""
   Displays:
@@ -35,8 +40,8 @@ Visualization Manager:
       Color: 160; 160; 164
       Enabled: true
       Line Style:
-        Line Width: 0.0299999993
-        Value: Lines
+        Line Width: 0.10000000149011612
+        Value: Billboards
       Name: Grid
       Normal Cell Count: 0
       Offset:
@@ -45,9 +50,9 @@ Visualization Manager:
         Z: 0
       Plane: XY
       Plane Cell Count: 10
-      Reference Frame: <Fixed Frame>
+      Reference Frame: map
       Value: true
-    - Alpha: 0.699999988
+    - Alpha: 0.699999988079071
       Class: rviz/Map
       Color Scheme: map
       Draw Behind: false
@@ -59,9 +64,9 @@ Visualization Manager:
       Value: true
     - Class: rviz/Axes
       Enabled: true
-      Length: 0.100000001
+      Length: 0.10000000149011612
       Name: Axes
-      Radius: 0.00999999978
+      Radius: 0.009999999776482582
       Reference Frame: <Fixed Frame>
       Value: true
     - Alpha: 0.5
@@ -79,7 +84,7 @@ Visualization Manager:
       Enabled: true
       Invert Rainbow: false
       Max Color: 255; 255; 255
-      Max Intensity: 999999
+      Max Intensity: -999999
       Min Color: 0; 0; 0
       Min Intensity: 999999
       Name: LaserScan
@@ -87,7 +92,7 @@ Visualization Manager:
       Queue Size: 10
       Selectable: true
       Size (Pixels): 3
-      Size (m): 0.0199999996
+      Size (m): 0.019999999552965164
       Style: Flat Squares
       Topic: /lidar2d/scan
       Unreliable: false
@@ -120,6 +125,8 @@ Visualization Manager:
         left_steering_link:
           Value: false
         lidar_link:
+          Value: true
+        map:
           Value: true
         right_battery:
           Value: false
@@ -167,6 +174,8 @@ Visualization Manager:
               right_front_axle_carrier:
                 right_front_wheel:
                   {}
+        map:
+          {}
       Update Interval: 0
       Value: true
     - Alpha: 1
@@ -279,11 +288,19 @@ Visualization Manager:
       Transport Hint: raw
       Unreliable: false
       Value: true
+    - Class: rviz/Marker
+      Enabled: true
+      Marker Topic: /goto_node/goal
+      Name: Marker
+      Namespaces:
+        "": true
+      Queue Size: 100
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
     Default Light: true
-    Fixed Frame: base_link
+    Fixed Frame: map
     Frame Rate: 30
   Name: root
   Tools:
@@ -294,7 +311,10 @@ Visualization Manager:
     - Class: rviz/FocusCamera
     - Class: rviz/Measure
     - Class: rviz/SetInitialPose
+      Theta std deviation: 0.2617993950843811
       Topic: /initialpose
+      X std deviation: 0.5
+      Y std deviation: 0.5
     - Class: rviz/SetGoal
       Topic: /move_base_simple/goal
     - Class: rviz/PublishPoint
@@ -304,35 +324,35 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 4.98693132
+      Distance: 10.290977478027344
       Enable Stereo Rendering:
-        Stereo Eye Separation: 0.0599999987
+        Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: -0.222710818
-        Y: 0.0289188474
-        Z: 0.0339204334
+        X: -0.22271081805229187
+        Y: 0.02891884744167328
+        Z: 0.03392043337225914
       Focal Shape Fixed Size: true
-      Focal Shape Size: 0.0500000007
+      Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
-      Near Clip Distance: 0.00999999978
-      Pitch: 0.494796604
+      Near Clip Distance: 0.009999999776482582
+      Pitch: 1.0697970390319824
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 2.44404292
+      Yaw: 6.277247905731201
     Saved: ~
 Window Geometry:
   Displays:
     collapsed: false
-  Height: 970
+  Height: 1014
   Hide Left Dock: false
   Hide Right Dock: true
   Image:
     collapsed: false
-  QMainWindow State: 000000ff00000000fd00000004000000000000016a0000032bfc0200000009fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000006100fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000004100000218000000d700fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261fb0000000a0049006d006100670065010000025f0000010d0000001600ffffff000000010000010f0000032bfc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a0056006900650077007300000000410000032b000000ad00fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e10000019700000003000005410000003efc0100000002fb0000000800540069006d00650100000000000005410000026900fffffffb0000000800540069006d00650100000000000004500000000000000000000003d10000032b00000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd00000004000000000000016a00000354fc0200000009fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000005d00fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000003f00000233000000cc00fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261fb0000000a0049006d00610067006501000002780000011b0000001700ffffff000000010000010f0000032bfc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a0056006900650077007300000000410000032b000000a900fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e10000019700000003000003f70000003efc0100000002fb0000000800540069006d00650100000000000003f7000002df00fffffffb0000000800540069006d00650100000000000004500000000000000000000002870000035400000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   Selection:
     collapsed: false
   Time:
@@ -341,6 +361,6 @@ Window Geometry:
     collapsed: false
   Views:
     collapsed: true
-  Width: 1345
-  X: 252
-  Y: 32
+  Width: 1015
+  X: 576
+  Y: 37

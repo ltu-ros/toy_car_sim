@@ -39,6 +39,7 @@ limitations under the License.
   <arg name="namespace" default="/"/>
   <arg name="world_name" default="$(find ackermann_vehicle_gazebo)/worlds/my_world.world"/>
   <arg name="cmd_timeout" default="0.5"/>
+  <arg name="ugv_id" default="car" />
 
   <!-- Vehicle pose -->
   <arg name="x" default="5.0"/>
@@ -80,6 +81,11 @@ limitations under the License.
       <param name="cmd_timeout" value="$(arg cmd_timeout)"/>
       <rosparam file="$(find ackermann_vehicle_gazebo)/config/em_3905_ackermann_ctrlr_params.yaml" command="load"/>
     </node>
+
+    <node name="$(arg ugv_id)_transform_broadcaster" type="transform_broadcaster.py" pkg="ackermann_vehicle_gazebo" output="screen">
+        <param name="odom_topic" value="$(arg ugv_id)/odom" />
+    </node>
+
   </group>
 
 
