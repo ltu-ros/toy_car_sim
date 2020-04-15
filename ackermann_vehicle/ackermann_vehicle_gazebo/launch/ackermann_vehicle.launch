@@ -60,7 +60,7 @@ limitations under the License.
 
     <!-- Create the world. -->
     <include file="$(find gazebo_ros)/launch/empty_world.launch">
-      <arg name="world_name" value="$(find ackermann_vehicle_gazebo)/worlds/$(arg world_name).launch"/>
+      <arg name="world_name" value="$(find ackermann_vehicle_gazebo)/worlds/$(arg world_name).world"/>
     </include>
 
     <!-- Spawn the vehicle. -->
