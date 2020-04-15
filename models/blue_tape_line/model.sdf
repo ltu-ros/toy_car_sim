@@ -1,12 +1,12 @@
 <?xml version="1.0" ?>
 <sdf version="1.5">
-  <model name="blue_tape_floor">
+  <model name="blue_tape_line">
     <static>true</static>
     <link name="link">
       <collision name="collision">
         <geometry>
           <box>
-            <size>13 10 .02</size>
+            <size>2.5 4 0.02</size>
           </box>
         </geometry>
       </collision>
@@ -14,14 +14,14 @@
         <cast_shadows>false</cast_shadows>
         <geometry>
           <box>
-            <size>13 10 .02</size>
+            <size>2.5 4 0.02</size>
           </box>
         </geometry>
         <material>
           <script>
-            <uri>model://blue_tape_floor/materials/scripts</uri>
-            <uri>model://blue_tape_floor/materials/textures</uri>
-            <name>vrc/floor</name>
+            <uri>model://blue_tape_line/materials/scripts</uri>
+            <uri>model://blue_tape_line/materials/textures</uri>
+            <name>vrc/tape_line</name>
           </script>
         </material>
       </visual>

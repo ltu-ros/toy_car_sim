@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
-<sdf version="1.5">
-  <model name="blue_tape_floor">
+<sdf version="1.4">
+  <model name="blue_tape_corner">
     <static>true</static>
     <link name="link">
       <collision name="collision">
@@ -19,9 +19,9 @@
         </geometry>
         <material>
           <script>
-            <uri>model://blue_tape_floor/materials/scripts</uri>
-            <uri>model://blue_tape_floor/materials/textures</uri>
-            <name>vrc/floor</name>
+            <uri>model://blue_tape_corner/materials/scripts</uri>
+            <uri>model://blue_tape_corner/materials/textures</uri>
+            <name>vrc/tape_corner</name>
           </script>
         </material>
       </visual>

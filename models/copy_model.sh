@@ -2,3 +2,5 @@
 
 mkdir -p ~/.gazebo/models
 cp -r blue_tape_floor/ ~/.gazebo/models
+cp -r blue_tape_line/ ~/.gazebo/models
+cp -r blue_tape_corner/ ~/.gazebo/models

@@ -12,6 +12,7 @@
 
     <include>
       <uri>model://blue_tape_floor</uri>
+      <pose>0 0 0.05 0 0 0</pose>
     </include>
 
   </world>
