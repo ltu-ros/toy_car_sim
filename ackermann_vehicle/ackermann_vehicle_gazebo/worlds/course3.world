@@ -275,7 +275,7 @@
     <!--- Corners -->
 
 
-    <model name='cyl3'>
+    <model name='cyl4'>
       <static>1</static>
       <pose>6.771 -3.370 0.5 0 0 0</pose>
       <link name='link'>
@@ -315,7 +315,7 @@
       </link>
     </model>
 
-    <model name='cyl3'>
+    <model name='cyl5'>
       <static>1</static>
       <pose>6.808 -4.492 0.5 0 0 0</pose>
       <link name='link'>
@@ -355,7 +355,7 @@
       </link>
     </model>
 
-    <model name='cyl3'>
+    <model name='cyl6'>
       <static>1</static>
       <pose>6.404 -5.801 0.5 0 0 0</pose>
       <link name='link'>
@@ -395,7 +395,7 @@
       </link>
     </model>
 
-    <model name='cyl3'>
+    <model name='cyl7'>
       <static>1</static>
       <pose>5.600 -6.842 0.5 0 0 0</pose>
       <link name='link'>
@@ -435,7 +435,7 @@
       </link>
     </model>
 
-    <model name='cyl3'>
+    <model name='cyl8'>
       <static>1</static>
       <pose>4.646 -7.895 0.5 0 0 0</pose>
       <link name='link'>
@@ -475,7 +475,7 @@
       </link>
     </model>
 
-    <model name='cyl3'>
+    <model name='cyl9'>
       <static>1</static>
       <pose>3.308 -8.247 0.5 0 0 0</pose>
       <link name='link'>
@@ -515,7 +515,7 @@
       </link>
     </model>
 
-    <model name='cyl3'>
+    <model name='cyl10'>
       <static>1</static>
       <pose>2.115 -8.388 0.5 0 0 0</pose>
       <link name='link'>
@@ -557,7 +557,7 @@
 
     <!-- inside corner -->
         
-    <model name='cyl3'>
+    <model name='cyl11'>
       <static>1</static>
       <pose>3.526 -3.466 0.5 0 0 0</pose>
       <link name='link'>
@@ -597,7 +597,7 @@
       </link>
     </model>
 
-    <model name='cyl3'>
+    <model name='cyl12'>
       <static>1</static>
       <pose>2.832 -4.368 0.5 0 0 0</pose>
       <link name='link'>
@@ -637,7 +637,7 @@
       </link>
     </model>
 
-    <model name='cyl3'>
+    <model name='cyl13'>
       <static>1</static>
       <pose>1.833 -4.914 0.5 0 0 0</pose>
       <link name='link'>
