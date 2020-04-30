@@ -291,7 +291,7 @@ Visualization Manager:
       Value: true
     - Class: rviz/Marker
       Enabled: true
-      Marker Topic: /goto_node/goal
+      Marker Topic: /goto_node/marker
       Name: Marker
       Namespaces:
         {}
