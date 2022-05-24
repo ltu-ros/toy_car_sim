@@ -20,7 +20,7 @@ $ git clone <this repo>
 Install `ros-control` packages:
 
 ```
-sudo apt-get install ros-kinetic-ros-control ros-kinetic-ros-controllers
+sudo apt-get install ros-$ROS_DISTRO-ros-control ros-$ROS_DISTRO-ros-controllers
 ```
 
 ### 3. Build
