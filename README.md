@@ -49,4 +49,4 @@ roslaunch ackermann_vehicle_gazebo ackermann_vehicle.launch
 ### Topics
 
   - **Camera:** `/car/camera1/image_raw`
-  - Twist command: `/prizm_twist_controller/twist_cmd`
+  - Twist command: `/prizm/twist_controller/twist_cmd`
