@@ -1,0 +1,39 @@
+<launch>
+  <arg name="world_name" default="my_world"/>
+
+  <!-- Create the world. -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find ackermann_vehicle_gazebo)/worlds/$(arg world_name).world"/>
+  </include>  
+
+  <include file="$(find ackermann_vehicle_gazebo)/launch/vehicle.launch" >
+    <arg name="namespace" value="/car0"/>
+    <arg name="cmd_timeout" value="0.5"/>
+    <arg name="ugv_id" value="car0" />
+
+    <!-- Vehicle pose -->
+    <arg name="x" value="5.0"/>
+    <arg name="y" value="4.1"/>
+    <arg name="z" value="0.1"/>
+    <arg name="roll" value="0.0"/>
+    <arg name="pitch" value="0.0"/>
+    <arg name="yaw" value="-1.5"/>
+  </include>
+
+  <include file="$(find ackermann_vehicle_gazebo)/launch/vehicle.launch" >
+    <arg name="namespace" value="/car1"/>
+    <arg name="cmd_timeout" value="0.5"/>
+    <arg name="ugv_id" value="car1" />
+
+    <arg name="x" value="3.0"/>
+    <arg name="y" value="4.1"/>
+    <arg name="z" value="0.1"/>
+    <arg name="roll" value="0.0"/>
+    <arg name="pitch" value="0.0"/>
+    <arg name="yaw" value="-1.5"/>
+  </include>
+
+  <!-- Rviz -->
+  <node type="rviz" name="rviz" pkg="rviz" args="-d $(find ackermann_vehicle_gazebo)/rviz/config.rviz" />
+
+</launch>
