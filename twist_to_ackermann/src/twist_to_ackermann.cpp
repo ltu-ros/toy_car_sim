@@ -33,8 +33,8 @@ private:
 //   Set up publisher and subscriber
 Twist2Ackermann::Twist2Ackermann()
 {
-  ackermann_pub_ = nh_.advertise<ackermann_msgs::AckermannDrive>("/ackermann_cmd", 100);
-  point_sub_ = nh_.subscribe("/prizm/twist_controller/twist_cmd", 100, &Twist2Ackermann::vecCallback, this);
+  ackermann_pub_ = nh_.advertise<ackermann_msgs::AckermannDrive>("ackermann_cmd", 100);
+  point_sub_ = nh_.subscribe("twist_cmd", 100, &Twist2Ackermann::vecCallback, this);
 }
 
 // Callback function for the points
